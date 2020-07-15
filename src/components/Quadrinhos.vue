@@ -4,7 +4,7 @@
       <q-img :src="thumbnail" basic contain :ratio="1"> </q-img>
 
       <q-card-section>
-        {{ title }}
+        {{ concat_name }}
       </q-card-section>
     </q-card>
   </div>
@@ -23,6 +23,16 @@ export default {
     },
     descricao: {
       type: String
+    }
+  },
+  computed: {
+    concat_name: function() {
+      console.log(this.title.length);
+      if (this.title.length > 18) {
+        return this.title.substr(0, 18) + "...";
+      } else {
+        return this.title;
+      }
     }
   }
 };

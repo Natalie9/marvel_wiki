@@ -8,7 +8,8 @@ export default {
         const urlComics = urlBaseMarvel + 'comics?apikey=' + apiKey + '&limit=' + limit;
         axios.get(urlComics).then((comics) => {
             if (callback) {
-                callback(comics);
+                console.log(comics)
+                callback(comics.data.data.results);
             }
         })
     },
@@ -16,12 +17,12 @@ export default {
         const urlComics = urlBaseMarvel + 'characters?apikey=' + apiKey + '&limit=' + limit;
         axios.get(urlComics).then((comics) => {
             if (callback) {
-                callback(comics);
+                callback(comics.data.data.results);
             }
         })
     },
     getAllStories: (limit, callback) => {
-        const urlComics = urlBaseMarvel + 'stories?apikey=' + apiKey + '&limit=' + limit;
+        const urlComics = urlBaseMarvel + 'series?apikey=' + apiKey +'&limit=' + limit;
         axios.get(urlComics).then((comics) => {
             if (callback) {
                 console.log(comics)

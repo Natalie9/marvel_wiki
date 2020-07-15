@@ -4,7 +4,7 @@
       <q-img :src="thumbnail" basic contain :ratio="1"> </q-img>
 
       <q-card-section>
-         {{ name }} {{thumbnail}}
+         {{ name }}
       </q-card-section>
     </q-card>
   </div>
